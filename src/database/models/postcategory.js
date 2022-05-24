@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const PostCategory = sequelize.defone(
+  const PostCategory = sequelize.define(
     'PostCategory',
     {},
     { timestamps: false }
