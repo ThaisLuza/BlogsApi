@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const senhasecreta = 'BATATINHADATURMA17';
+const senhasecreta = process.env.JWT_SECRET;
 
 const authToken = async (req, res, next) => {
   try {
@@ -16,7 +16,7 @@ const authToken = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
     return res.status(500).json(error.message);
   }
 };
