@@ -6,13 +6,13 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       content: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       userId: {
         type: Sequelize.INTEGER,
@@ -24,15 +24,19 @@ module.exports = {
           key: 'id',
         },
       },
-      published: {
-        type: Sequelize.STRING
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        field: 'published',
       },
-      updated: {
-        type: Sequelize.STRING
-      }
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        field: 'updated',
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('BlogPosts');
-  }
+  },
 };
