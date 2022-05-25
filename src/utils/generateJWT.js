@@ -1,10 +1,11 @@
+require('dotenv').config();
+
 const jwt = require('jsonwebtoken');
 
-const senhasecreta = 'BATATINHADATURMA17';
+const senhasecreta = process.env.JWT_SECRET;
 
 const jwtConfig = {
-  // HEADERS CONFIG
-  expiresIn: '15m',
+  expiresIn: '15d',
   algorithm: 'HS256',
 };
 
