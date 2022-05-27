@@ -1,17 +1,20 @@
 const Joi = require('joi');
+// const { erroHandler } = require('../utils/erroHandler');
 
 const NEWPOST = Joi.object({
-  name: Joi.string().required(),
+  title: Joi.string().required(),
+  content: Joi.string().required(),
+  categoryIds: Joi.array().required(),
 });
 
-const validatePost = (req, res, next) => {
-  const { name } = req.body;
+const validateUser = (req, res, next) => {
+  const { title, content, categoryIds } = req.body;
 
-  const { error } = NEWPOST.validate({ name });
+  const { error } = NEWPOST.validate({ title, content, categoryIds });
 
   if (error) next({ status: 400, message: error.message });
   // console.log(error);
 
   next();
 };
-module.exports = validatePost;
+module.exports = validateUser;
