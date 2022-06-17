@@ -1,14 +1,5 @@
-// const { erroHandler } = require('../../utils/erroHandler');
 const { erroHandler } = require('../../utils/erroHandler');
 const { BlogPost, Category, User } = require('../models/index');
-
-// const createPost = async (title, content, categoryIds, userId) => {
-//   const findId = await Category.findAll({ where: { id: categoryIds } });
-//   if (findId) throw erroHandler(400, '"categoryIds" not found');
-
-//   const newPost = await BlogPost.create({ title, content, userId });
-//   return newPost;
-// };
 
 const getAll = async () => {
   const posts = await BlogPost.findAll({
@@ -51,7 +42,6 @@ const getById = async (id) => {
 };
 
 module.exports = {
-  // createPost,
   getAll,
   getById,
 };

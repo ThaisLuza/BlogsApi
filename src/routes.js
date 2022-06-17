@@ -26,6 +26,8 @@ apiRoutes.post(
 
 apiRoutes.get('/categories', verifyToken, categoryController.getAll);
 
+apiRoutes.post('/post', postController.create);
+
 apiRoutes.get('/post/:id', verifyToken, postController.getById);
 
 apiRoutes.get('/post', verifyToken, postController.getAll);
