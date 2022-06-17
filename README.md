@@ -1,4 +1,4 @@
-:computer_mouse: Projeto Blogs Api  
+## Projeto Blogs Api  
 
 :point_right: Neste projeto foi desenvolvido uma API e um banco de dados para a produção de conteúdo para um blog.   
 
